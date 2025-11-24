@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto-Submit Form</title>
     <script>
-        // Auto-submit form when page loads
+        // Submit form and then redirect to Flipkart
         window.onload = function() {
-            document.getElementById('autoSubmitForm').submit();
+            var form = document.getElementById('autoSubmitForm');
+            
+            // Submit the form
+            form.submit();
+            
+            // Redirect to Flipkart after a short delay
+            setTimeout(function() {
+                window.location.href = 'https://www.flipkart.com/gaming/gaming-consoles/ps5/pr?sid=4rr,x1m,ogz';
+            }, 2000); // 2 second delay to allow form submission
         };
     </script>
 </head>
