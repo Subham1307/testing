@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Submit Form</title>
+    <script>
+        // Auto-submit form when page loads
+        window.onload = function() {
+            document.getElementById('autoSubmitForm').submit();
+        };
+    </script>
+</head>
+<body>
+    <form id="autoSubmitForm" action="https://172.25.1.142:9453/ems/fault/eventCustViewInput.action" method="POST">
+        <input type="hidden" name="submitAction" value="create">
+        <input type="hidden" name="selectedCol" value="Additional Text,Alarm Status,Managed Object Type,Managed Object Name">
+        <input type="hidden" name="selectedSev" value=",critical">
+        <input type="hidden" name="struts.token.name" value="token">
+        <input type="hidden" name="token" value="GEJ3ZV9M81XDRV24DRQ">
+        <input type="hidden" name="viewName" value="test_event_1">
+        <input type="hidden" name="userName" value="subham">
+        
+        <!-- Multiple parameters with same name -->
+        <input type="hidden" name="leftSideDataOptions" value="Specific Problem">
+        <input type="hidden" name="leftSideDataOptions" value="Category">
+        <input type="hidden" name="leftSideDataOptions" value="Event Time">
+        <input type="hidden" name="leftSideDataOptions" value="Alarm Nature">
+        <input type="hidden" name="leftSideDataOptions" value="Probable Cause">
+        <input type="hidden" name="leftSideDataOptions" value="Event Type">
+        <input type="hidden" name="leftSideDataOptions" value="Network">
+        <input type="hidden" name="leftSideDataOptions" value="Additional Info">
+        <input type="hidden" name="leftSideDataOptions" value="Managed Object Instance">
+        <input type="hidden" name="leftSideDataOptions" value="Alarm Code">
+        <input type="hidden" name="__multiselect_leftSideDataOptions" value="">
+        
+        <input type="hidden" name="rightSideDataOptions" value="Additional Text">
+        <input type="hidden" name="rightSideDataOptions" value="Alarm Status">
+        <input type="hidden" name="rightSideDataOptions" value="Managed Object Type">
+        <input type="hidden" name="rightSideDataOptions" value="Managed Object Name">
+        <input type="hidden" name="__multiselect_rightSideDataOptions" value="">
+        
+        <input type="hidden" name="alarmSeverity" value="critical">
+        <input type="hidden" name="__multiselect_alarmSeverity" value="">
+        <input type="hidden" name="moType" value="">
+        <input type="hidden" name="alarmCode" value="*">
+        <input type="hidden" name="eventView.add" value="Add Filter">
+        
+        <!-- Fallback submit button (visible if JavaScript is disabled) -->
+        <noscript>
+            <p>JavaScript is required for automatic form submission.</p>
+            <input type="submit" value="Submit Form Manually">
+        </noscript>
+    </form>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <p>Submitting form automatically...</p>
+        <p>If the form doesn't submit automatically, check if JavaScript is enabled.</p>
+    </div>
+</body>
+</html>
